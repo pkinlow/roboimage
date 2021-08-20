@@ -1,0 +1,109 @@
+@itemheight = 70vh;
+@textitemheight = itemheight / 2;
+
+* {
+  box-sizing: content-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+/* https://www.toptal.com/designers/htmlarrows/symbols/ */
+
+.win:before, .lose:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: red;
+  font-size: 40vh;
+  text-align: center;
+  line-height: 70vh;
+  width: 70vh;
+  height: 70vh;
+  z-index: 9000;
+  text-shadow: 0px 0px 10px #000;
+  -webkit-box-shadow: 0px 0px 10px #000;
+  -moz-box-shadow: 0px 0px 10px #000;
+}
+
+.win:before {
+  content: '\02713';
+  color: limegreen;
+}
+
+.lose:before {
+  content: '\02715';
+}
+
+.win:after, .lose:after {
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  content: ' ';
+  width: 70vh;
+  height: 70vh;
+  z-index: 500;
+  opacity: 0.2;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #ccc;
+  background: #333;
+  padding: 0;
+  margin: 0;
+}
+
+.battleground {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  min-width: 500px;
+}
+
+.playerbox {
+  position: relative;
+  border: 3px solid #ccc;
+  margin: 0 5vh;
+  width: 70vh;
+  height: 70vh;
+  cursor: pointer;
+}
+
+.playerbox.loading {
+  background: url(loader.gif) no-repeat 50% 50% transparent;
+}
+
+.playerbox.complete {
+  background: none;
+}
+
+.playerbox img {
+  width: 70vh;
+  height: 70vh;
+}
+
+.playerbox img.loading {
+  opacity: 0;
+}
+
+.playerbox img.complete {
+  transition: opacity 1s;
+  opacity: 1;
+  background: none;
+}
+
+.contest-title {
+  text-align: center;
+  font-size: 50px;
+  color: #f0f0f0;
+}
+
+.reset {
+  text-align: center;
+}
